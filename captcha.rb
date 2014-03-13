@@ -1,5 +1,7 @@
-class Captcha
+lass Captcha
+
   @@number_wording = { '1' => 'One', '2' => 'Two', '3' => 'Three', '4' => 'Four', 5 => 'Five', 6 => 'Six', 7 => 'Seven', 8 => 'Eight', 9 => 'Nine' }
+
   def initialize(pattern, left_operand, operator, right_operand)
     @pattern = pattern
     @left_operand = left_operand
