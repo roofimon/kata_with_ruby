@@ -7,6 +7,17 @@ class Captcha
     @right_operand = right_operand
   end
 
+  def result()
+    case @operator
+    when 1
+      @left_operand + @right_operand
+    when 2
+      @left_operand - @right_operand
+    when 3
+      @left_operand * @right_operand
+    end
+  end
+
   def label()
     "#{left_operand} #{operator} #{right_operand}"
   end
