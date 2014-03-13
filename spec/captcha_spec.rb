@@ -1,5 +1,15 @@
 require 'spec_helper'
 describe 'Captcha' do
+  it 'should return 3 + One if input is 2, 3, 1, 1' do
+    captcha = Captcha.new(2, 3, 1, 1)
+    captcha.label.should eq '3 + One'
+  end
+
+  it 'should return Three + 1 if input is 1, 3, 1, 1' do
+    captcha = Captcha.new(1, 3, 1, 1)
+    captcha.label.should eq 'Three + 1'
+  end
+
   it 'right operand should return One if input is 2, 3, 1, 1' do
     captcha = Captcha.new(2, 3, 1, 1)
     captcha.right_operand.should eq 'One'
