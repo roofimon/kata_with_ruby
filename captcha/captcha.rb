@@ -30,8 +30,11 @@ class Captcha
   end
 
   def left_operand()
-    return @@number_wording[@left_operand.to_s] if @pattern == TEXT_OPERATOR_NUMBER
-    return @left_operand.to_s if @pattern == NUMBER_OPERATOR_TEXT
+    if @pattern == TEXT_OPERATOR_NUMBER 
+      @@number_wording[@left_operand.to_s]
+    elsif @pattern == NUMBER_OPERATOR_TEXT
+      @left_operand.to_s 
+    end
   end
 
   def operator
@@ -39,7 +42,10 @@ class Captcha
   end
 
   def right_operand()
-    return @@number_wording[@right_operand.to_s] if @pattern == NUMBER_OPERATOR_TEXT
-    return @right_operand.to_s if @pattern == TEXT_OPERATOR_NUMBER
+    if @pattern == TEXT_OPERATOR_NUMBER
+      @right_operand.to_s
+    elsif @pattern == NUMBER_OPERATOR_TEXT 
+      @@number_wording[@right_operand.to_s]
+    end
   end
 end
