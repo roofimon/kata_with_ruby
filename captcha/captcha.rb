@@ -14,7 +14,7 @@ class Captcha
     @right_operand = right_operand
   end
 
-  def result()
+  def result
     case @operator
     when PLUS
       @left_operand + @right_operand
@@ -25,11 +25,11 @@ class Captcha
     end
   end
 
-  def label()
+  def label
     "#{left_operand} #{operator} #{right_operand}"
   end
 
-  def left_operand()
+  def left_operand
     if @pattern == TEXT_OPERATOR_NUMBER 
       @@number_wording[@left_operand.to_s]
     elsif @pattern == NUMBER_OPERATOR_TEXT
@@ -41,7 +41,7 @@ class Captcha
     { '1' => '+', '2' => '-', '3' => '*' }.fetch @operator.to_s
   end
 
-  def right_operand()
+  def right_operand
     if @pattern == TEXT_OPERATOR_NUMBER
       @right_operand.to_s
     elsif @pattern == NUMBER_OPERATOR_TEXT 
